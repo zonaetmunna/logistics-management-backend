@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
-
+const userRouter = require("./src/routes/user.routes")
 
 const app: Express = express();
 //middlewares
@@ -11,4 +11,5 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Hello, World!');
 });
 
+app.use("/api/v1/user", userRouter);
 export default app;
